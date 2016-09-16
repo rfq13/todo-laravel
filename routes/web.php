@@ -15,16 +15,12 @@ Route::post('/todos','TodoController@store');
 /**
  * Show edit todo
  */
-Route::get('todos/{todo}/todo', function(){
-
-});
+Route::get('todos/{todo}/edit', 'TodoController@edit');
 
 /**
  * update todo
  */
-Route::put('todos/{todo}', function(){
-
-});
+Route::put('todos/{todo}', 'TodoController@update');
 
 /**
  * Delete Todo

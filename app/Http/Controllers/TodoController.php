@@ -30,14 +30,16 @@ class TodoController extends Controller
         return redirect('/');
     }
 
-    public function edit()
+    public function edit(Todo $todo)
     {
-        return view('todos.edit');
+        return view('todos.edit', compact('todo'));
     }
 
-    public function update()
+    public function update(Request $request, Todo $todo)
     {
+        $todo->update($request->all());
 
+        return redirect('/');
     }
 
     public function delete(Todo $todo)
