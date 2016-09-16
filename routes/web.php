@@ -4,16 +4,13 @@
 * Show Todo Dashboard
 */
 
-Route::get('/', function () {
-    return 'halaman dashboard todo';
-});
+Route::get('/', 'TodoController@index');
+Route::get('/todos/create', 'TodoController@create');
 
 /**
  * Add Todo
  */
-Route::post('/todos', function () {
-    //
-});
+Route::post('/todos','TodoController@store');
 
 /**
  * Show edit todo
@@ -35,3 +32,6 @@ Route::put('todos/{todo}', function(){
 Route::delete('/todos/{todo}', function () {
     //
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
