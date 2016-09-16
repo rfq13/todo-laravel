@@ -29,9 +29,7 @@ Route::put('todos/{todo}', function(){
 /**
  * Delete Todo
  */
-Route::delete('/todos/{todo}', function () {
-    //
-});
+Route::get('/todos/{todo}/delete', 'TodoController@delete');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');

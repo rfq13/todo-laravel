@@ -40,8 +40,10 @@ class TodoController extends Controller
 
     }
 
-    public function delete()
+    public function delete(Todo $todo)
     {
+        $todo->delete();
 
+        return redirect('/');
     }
 }
