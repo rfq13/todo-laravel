@@ -1,16 +1,37 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| This file is where you may define all of the routes that are handled
-| by your application. Just tell Laravel the URIs it should respond
-| to using a Closure or controller method. Build something great!
-|
+/**
+* Show Todo Dashboard
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return 'halaman dashboard todo';
+});
+
+/**
+ * Add Todo
+ */
+Route::post('/todos', function () {
+    //
+});
+
+/**
+ * Show edit todo
+ */
+Route::get('todos/{todo}/todo', function(){
+
+});
+
+/**
+ * update todo
+ */
+Route::put('todos/{todo}', function(){
+
+});
+
+/**
+ * Delete Todo
+ */
+Route::delete('/todos/{todo}', function () {
+    //
 });
