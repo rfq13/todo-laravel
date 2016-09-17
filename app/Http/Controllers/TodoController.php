@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Todo;
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
-
 class TodoController extends Controller
 {
     public function index()

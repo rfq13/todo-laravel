@@ -9,7 +9,9 @@
                 <div class="panel-body">
                     <a href="{{ url('todos/create') }}" class="btn btn-primary">Add todo</a>
 
-                    <hr>
+                    <br>
+                    <br>
+                    <br>
 
                     <div class="table-responsive">
                         <table class="table">
@@ -19,6 +21,11 @@
                                 <th>Action</th>
                             </th>
 
+                            @if(! count($todos))
+                                <tr>
+                                    <td colspan="3">No todo</td>
+                                </tr>
+                            @endif
                             @foreach($todos as $todo)
                                 <tr>
                                     <td>{{ $todo->name }}</td>

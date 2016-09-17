@@ -5,6 +5,10 @@
 */
 
 Route::get('/', 'TodoController@index');
+
+/**
+ *  Show create todo form
+ */
 Route::get('/todos/create', 'TodoController@create');
 
 /**
