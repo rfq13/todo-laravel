@@ -14,6 +14,7 @@
                                 <label class="control-label">Name</label>
                                 <input type="text" name="name" class="form-control">
                             </div>
+                            <input type="hidden" name="status" value="waiting">
 
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary">Add Todo</button>

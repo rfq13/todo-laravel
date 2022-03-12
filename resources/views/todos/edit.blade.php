@@ -16,15 +16,20 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label">Is Done</label>
+                                <label class="control-label">Status</label>
                                 <div class="radio">
                                     <label>
-                                        <input type="radio" value="1" name="is_done"> Done
+                                        <input type="radio" value="done" name="status" {{ $todo->status == 'done' ? 'checked' : '' }}> Done
                                     </label>
                                 </div>
                                 <div class="radio">
                                     <label>
-                                        <input type="radio" value="0" name="is_done"> Not Done
+                                        <input type="radio" value="on process" name="status" {{ $todo->status == 'on process' ? 'checked' : '' }}> On Process
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" value="waiting" name="status" {{ $todo->status == 'waiting' ? 'checked' : '' }}> Waiting
                                     </label>
                                 </div>
                             </div>
@@ -40,3 +45,10 @@
         </div>
     </div>
 @endsection
+
+{{-- @push('script')
+<script>
+    // $('input[name=status]').val('{{ $todo->status }}');
+</script>
+    
+@endpush --}}

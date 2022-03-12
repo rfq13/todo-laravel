@@ -8,5 +8,5 @@ class Todo extends Model
 {
     protected $table = 'todos';
 
-    public $fillable = ['name', 'is_done'];
+    public $fillable = ['name', 'status'];
 }

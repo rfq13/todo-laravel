@@ -29,6 +29,9 @@
 <nav class="navbar navbar-default navbar-static-top">
     <div class="container">
         <div class="navbar-header">
+            <form action="{{ url('/logout') }}" id="formLogout" method="post">
+                @csrf
+            </form>
 
             <!-- Collapsed Hamburger -->
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
@@ -42,6 +45,10 @@
             <a class="navbar-brand" href="{{ url('/') }}">
                 Laravel
             </a>
+            @if (Auth::check())
+                
+            <a class="navbar-text" onclick="logout()">LogOut</a>
+            @endif
         </div>
 
     </div>
@@ -53,5 +60,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
+
+<script>
+    function logout() {
+        document.getElementById('formLogout').submit();
+    }
+</script>
+@stack("script")
 </body>
 </html>
