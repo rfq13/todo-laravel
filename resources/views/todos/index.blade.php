@@ -16,7 +16,8 @@
                     <div class="table-responsive">
                         <table class="table">
                             <tr>
-                                <th>Name</th>
+                                <th>Title</th>
+                                <th>Detail</th>
                                 <th>Status</th>
                                 <th>Action</th>
                             </th>
@@ -28,7 +29,8 @@
                             @endif
                             @foreach($todos as $todo)
                                 <tr>
-                                    <td>{{ $todo->name }}</td>
+                                    <td>{{ $todo->title }}</td>
+                                    <td>{{ $todo->detail }}</td>
                                     <td>{{ $todo->status }}</td>
                                     <td>
                                         <a class="btn btn-warning" href="{{ url('todos/'.$todo->id.'/edit') }}">Edit</a>

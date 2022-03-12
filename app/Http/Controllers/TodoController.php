@@ -23,6 +23,11 @@ class TodoController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'title' => 'required|max:255',
+            'status' => 'required',
+        ]);
+
         Todo::create($request->all());
 
         return redirect('/');
@@ -35,7 +40,15 @@ class TodoController extends Controller
 
     public function update(Request $request, Todo $todo)
     {
-        $todo->update($request->all());
+        $request->validate([
+            'title' => 'required|max:255',
+            'status' => 'required',
+        ]);
+
+        $todo->title = $request->title;
+        $todo->status = $request->status;
+        $todo->detail = $request->detail;
+        $todo->save();
 
         return redirect('/');
     }

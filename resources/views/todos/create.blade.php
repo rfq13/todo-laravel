@@ -11,8 +11,12 @@
                             {{ csrf_field() }}
 
                             <div class="form-group">
-                                <label class="control-label">Name</label>
-                                <input type="text" name="name" class="form-control">
+                                <label class="control-label">Title</label>
+                                <input type="text" name="title" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Detail</label>
+                                <textarea name="detail" class="form-control" id="" cols="30" rows="10"></textarea>
                             </div>
                             <input type="hidden" name="status" value="waiting">
 

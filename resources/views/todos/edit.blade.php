@@ -11,10 +11,13 @@
                             {{ method_field('put') }}
 
                             <div class="form-group">
-                                <label class="control-label">Name</label>
-                                <input type="text" name="name" class="form-control" value="{{ $todo->name }}">
+                                <label class="control-label">Title</label>
+                                <input type="text" name="title" class="form-control" value="{{ $todo->title }}">
                             </div>
-
+                            <div class="form-group">
+                                <label class="control-label">Detail</label>
+                                <textarea name="detail" class="form-control" id="" cols="30" rows="10">{{ $todo->detail }}</textarea>
+                            </div>
                             <div class="form-group">
                                 <label class="control-label">Status</label>
                                 <div class="radio">
